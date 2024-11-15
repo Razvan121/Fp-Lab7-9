@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="16c364ce-9fb1-4277-9253-cf20557fbda2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Project_Lab7-9.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Business/Services.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Business/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Discipline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Students.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exceptions/Exceptions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exceptions/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Repostory_Discipline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Repostory_Students.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UI/Console.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UI/Read.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UI/Ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UI/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Validation/Validators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Validation/__init__.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2oTfcGYwnO1TcMmQAaNGdh8Afg8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Ui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Razvan/PycharmProjects/Project_Lab7-9&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
+        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="16c364ce-9fb1-4277-9253-cf20557fbda2" name="Changes" comment="" />
+      <created>1730898564112</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730898564112</updated>
+      <workItem from="1730898566039" duration="18785000" />
+      <workItem from="1731060510067" duration="8969000" />
+      <workItem from="1731250272891" duration="1334000" />
+      <workItem from="1731357225673" duration="10184000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Project_Lab7_9$tests.coverage" NAME="tests Coverage Results" MODIFIED="1731486634588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
+    <SUITE FILE_PATH="coverage/Project_Lab7_9$Ui.coverage" NAME="Ui Coverage Results" MODIFIED="1731486647796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UI" />
+    <SUITE FILE_PATH="coverage/Project_Lab7_9$main.coverage" NAME="main Coverage Results" MODIFIED="1731487141686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main" />
+  </component>
+</project>
