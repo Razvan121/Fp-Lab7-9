@@ -1,11 +1,13 @@
 from Domain.Discipline import Discipline
 from Domain.Student import Student
 from Exceptions.Exceptions import RepoException, SerivceException, ValidatorException
+import random
+import string
 
 
 class ServiceStudents:
     def __init__(self, valid_student, repo_student):
-        self.valid_student = valid_student
+        self.__valid_student = valid_student
         self.__repo_student = repo_student
 
     def addstudent(self, id_student, name):
@@ -15,7 +17,7 @@ class ServiceStudents:
         :return: The student object that was successfully added
         """
         student = Student(id_student, name)
-        self.valid_student.validate_student(student)
+        self.__valid_student.validate_student(student)
         self.__repo_student.add_student(student)
         return student
 
@@ -25,16 +27,16 @@ class ServiceStudents:
         :return: The student object that was successfully deleted
         """
         self.__repo_student.delete_student(id_student)
-    def modify_student(self,id_student,name):
+
+    def modify_student(self, id_student, name):
         """
         :param id_student: The unique identifier for the student to be modified.
         :param name: The new name for the student.
         """
-        self.__repo_student.modify_student(id_student,name)
+        self.__repo_student.modify_student(id_student, name)
 
-    def search_student(self,id_student):
+    def search_student(self, id_student):
         """
-
         :param id_student: The ID of the student to be searched
         """
         return self.__repo_student.search_student_by_ID(id_student)
@@ -45,6 +47,17 @@ class ServiceStudents:
         """
         return self.__repo_student.get_all_students()
 
+    def student_random(self, x):
+        i = 0
+        while i < x:
+            random_string = ''.join(random.choices(string.ascii_lowercase, k=5)) + ' ' + ''.join(
+                random.choices(string.ascii_lowercase, k=5))
+            random_id = random.randint(1, 1000)
+            student = Student(random_id, random_string)
+            if not self.__repo_student.check_ID(random_id):
+                self.__valid_student.validate_student(student)
+                self.__repo_student.add_student(student)
+                i += 1
 
 class ServiceDiscipline:
     def __init__(self, valid_discipline, repo_discipline):

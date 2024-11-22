@@ -1,10 +1,14 @@
+from wsgiref.validate import validator
+
 from Business.ServiceGrade import ServiceGrade
+from Business.Services import ServiceStudents
 from Domain.Discipline import Discipline
 from Domain.Grade import Grade
 from Domain.Student import Student
 from Infrastructure.Repostory_Discipline import repostory_discipline
 from Infrastructure.Repostory_Grade import repostory_grade
 from Infrastructure.Repostory_Student import repostory_students
+
 from Validation.Validators import Validator
 
 
@@ -161,6 +165,23 @@ def test_search_discipline_by_id():
     assert disciplinesearch.get_name() == "Fizica"
     print("Discipline searching successfully")
 
+def test_create_grade():
+
+    student = Student("1","Ana Maria")
+    discipline = Discipline("1","Fizica","Lionel Messi")
+
+    validator = Validator()
+
+    validator.validate_student(student)
+    validator.validate_discipline(discipline)
+
+
+    grade = Grade(10,student,discipline)
+    assert grade.get_grade() == 10
+    assert grade.get_name_discipline() == "Fizica"
+    assert grade.get_name_student() == "Ana Maria"
+    print("Grade created successfully")
+
 def test_assign_grade():
     student = Student("1","Ana Maria")
     repo_stud = repostory_students()
@@ -171,13 +192,138 @@ def test_assign_grade():
     repo_discipline.add_discipline(discipline)
 
     grade = Grade(10,student,discipline)
+    assert grade.get_grade() == 10
+    assert grade.get_name_discipline() == "Fizica"
+    assert grade.get_name_student() == "Ana Maria"
+
+def test_random():
+    repo_stud = repostory_students()
+    validator = Validator()
+    stud_srv = ServiceStudents(validator, repo_stud)
+    # student = stud_srv.student_random()
+    nr = 5
+    stud_srv.student_random(nr)
+
+    assert len(repo_stud.get_all_students()) == nr
+
+def test_sort_list():
+
+    repo_stud = repostory_students()
+    validator = Validator()
+
+    stud_srv = ServiceStudents(validator, repo_stud)
+
+    student1 = Student("1","Ana Maria")
+    repo_stud.add_student(student1)
+
+    student2 = Student("2","Mihai Gabriel")
+    repo_stud.add_student(student2)
+    student3 = Student("3","Ion Gabriel")
+    repo_stud.add_student(student3)
+
+    discipline = Discipline("1","Fizica","Lionel Messi")
+
+    repo_discipline = repostory_discipline()
+    repo_discipline.add_discipline(discipline)
+    repo_grade = repostory_grade()
+
+    grade = Grade(6,student1,discipline)
+
+    repo_grade.add_grade(grade)
+
+    grade_1 = Grade(7,student1,discipline)
+
+    repo_grade.add_grade(grade_1)
+
+    grade1 = Grade(10,student2,discipline)
+    repo_grade.add_grade(grade1)
+
+    grade2 = Grade(10,student3,discipline)
+    repo_grade.add_grade(grade2)
+
+    grade_srv = ServiceGrade(validator,repo_stud,repo_discipline,repo_grade)
+
+    id_discipline = discipline.get_id()
+
+    lst_sorted = grade_srv.get_sorted_students_with_grades(id_discipline)
+    assert lst_sorted[0][0].get_name() == "Ana Maria"
+    assert lst_sorted[1][0].get_name() == "Ion Gabriel"
+    assert lst_sorted[2][0].get_name() == "Mihai Gabriel"
+
+
+
+def test_get_average_grade_for_student():
+    student = Student("1","Ana Maria")
+    repo_stud = repostory_students()
+    repo_stud.add_student(student)
+
+    discipline = Discipline("1","Fizica","Lionel Messi")
+    repo_discipline = repostory_discipline()
+    repo_discipline.add_discipline(discipline)
+
+    discipline2 = Discipline("2","Matematica","Ion Gabriel")
+    repo_discipline.add_discipline(discipline2)
+
+    grade = Grade(6,student,discipline)
     repo_grade = repostory_grade()
     repo_grade.add_grade(grade)
 
-    assert repo_grade.get_all_grades()[0].get_grade() == 10
-    assert repo_grade.get_all_grades()[0].get_student().get_name() == "Ana Maria"
+    grade1 = Grade(7,student,discipline2)
+    repo_grade.add_grade(grade1)
+
+    grade2 = Grade(10,student,discipline)
+    repo_grade.add_grade(grade2)
+
+    grade_srv = ServiceGrade(Validator(),repo_stud,repo_discipline,repo_grade)
+
+    id_student = student.get_id()
+
+    average = grade_srv.get_average_grade_for_student(id_student)
+    assert average == 7.67
+    print("Average grade for student successfully")
 
 
+def test_sort_grades_by_student():
+    student = Student("1","Ana Maria")
+    repo_stud = repostory_students()
+    repo_stud.add_student(student)
+
+    student1 = Student("2","Mihai Gabriel")
+    repo_stud.add_student(student1)
+
+    student2 = Student("3","Ion Gabriel")
+    repo_stud.add_student(student2)
+
+    discipline = Discipline("1","Fizica","Lionel Messi")
+    repo_discipline = repostory_discipline()
+    repo_discipline.add_discipline(discipline)
+
+    discipline2 = Discipline("2","Matematica","Ion Gabriel")
+    repo_discipline.add_discipline(discipline2)
+
+    grade = Grade(6,student,discipline)
+    repo_grade = repostory_grade()
+    repo_grade.add_grade(grade)
+
+    grade1 = Grade(7,student,discipline2)
+    repo_grade.add_grade(grade1)
+
+    grade2 = Grade(10,student,discipline)
+    repo_grade.add_grade(grade2)
+
+    grade3 = Grade(8,student1,discipline)
+    repo_grade.add_grade(grade3)
+
+    grade4 = Grade(5,student2,discipline)
+    repo_grade.add_grade(grade4)
+
+    grade_srv = ServiceGrade(Validator(),repo_stud,repo_discipline,repo_grade)
+
+    lst = grade_srv.sort_grades_by_student()
+
+    assert lst[0][1] == 8.0
+    assert len(lst) == 1
+    print("Sort grades by student successfully")
 
 def run_all_tests():
     test_Create_Student()
@@ -191,6 +337,11 @@ def run_all_tests():
     test_modify_discipline()
     test_search_student_by_id()
     test_search_discipline_by_id()
+    test_create_grade()
     test_assign_grade()
+    test_random()
+    test_sort_list()
+    test_get_average_grade_for_student()
+    test_sort_grades_by_student()
 
 run_all_tests()

@@ -32,6 +32,15 @@ def searchSubject():
     print("Search by ID")
     print(">>>")
 
+def manageGrade():
+    print("________MANAGE GRADES___________")
+    print("1.Add grade")
+    print("2.Print grades")
+    print("3.Delete grade")
+    print("4.Statistics")
+
+
+
 
 def Statistics():
     print("_________STATISTICS___________")

@@ -16,6 +16,9 @@ class Grade:
         """
         return self.__grade
 
+    def get_student(self):
+        return self.__student
+
     def get_id_student(self):
         """
         :return: The ID of the student retrieved from the student object.

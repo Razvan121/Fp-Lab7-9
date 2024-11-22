@@ -14,7 +14,7 @@ grade_rep = repostory_grade()
 
 stud_srv = ServiceStudents(validator, stud_rep)
 dis_srv = ServiceDiscipline(validator, dis_rep)
-grade_srv = ServiceGrade(validator, stud_rep, dis_rep, grade_rep, stud_srv, dis_srv)
+grade_srv = ServiceGrade(validator, stud_rep, dis_rep, grade_rep)
 menu = Interface(stud_srv, dis_srv, grade_srv)
 
 run_all_tests()

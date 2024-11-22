@@ -1,4 +1,4 @@
-from UI.Console import console, manageSubject, manageStudent
+from UI.Console import console, manageSubject, manageStudent, Statistics
 
 
 class Interface():
@@ -27,6 +27,11 @@ class Interface():
 
             except ValueError as e:
                 print(f"Error: {e}")
+
+    def random_stude(self):
+        x = int(input("Enter number of entities: "))
+        self.__srv_students.student_random(x)
+            
 
     #
     # def ui_add_discipline(self):
@@ -60,22 +65,22 @@ class Interface():
                 print("Please try again.")
 
     def ui_add_grade(self):
-        id_student = int(input("Enter ID for student: "))
-        id_discipline = int(input("Enter ID for discipline: "))
-        grade = int(input("Enter grade: "))
-        #
-        # student = self.__srv_students.search_student(id_student)
-        # discipline = self.__srv_discipline.search_discipline(id_discipline)
-        #
-        # fgrade = self.__srv_grade.add_gradesrv(student, id_discipline, grade)
+        while True:
+            try:
+                id_student = int(input("Enter ID for student: "))
+                id_discipline = int(input("Enter ID for discipline: "))
+                grade = int(input("Enter grade: "))
+                if grade < 0 or grade > 10:
+                    raise ValueError("Grade must be between 0 and 10")
 
-        try:
-            fgrade = self.__srv_grade.add_gradesrv(id_student, id_discipline, grade)
-            student = self.__srv_students.search_student(id_student)
-            discipline = self.__srv_discipline.search_discipline(id_discipline)
-            print(f"Student {student.get_name()} has {grade} grade at {discipline.get_name()}")
-        except ValueError as e:
-            print(f"Error: {e}")
+                fgrade = self.__srv_grade.add_gradesrv(id_student, id_discipline, grade)
+                student = self.__srv_students.search_student(id_student)
+                discipline = self.__srv_discipline.search_discipline(id_discipline)
+                print(f"Student {student.get_name()} has {grade} grade at {discipline.get_name()}")
+                break
+            except ValueError as e:
+                print(f"Error: {e}")
+                print("Please try again.")
 
     def ui_print_all_grades(self):
         student_grades = self.__srv_grade.get_all_gradesrv()
@@ -87,12 +92,13 @@ class Interface():
         #         print(f"  {discipline.get_name()}: {', '.join(map(str, grade_values))}")
 
         for student_id, disciplines in student_grades.items():
-            student = self.__srv_students.search_student(student_id)  # Retrieve student object
+            student = self.__srv_students.search_student(student_id)  
             print(f"Grades for {student.get_name()}:")
             for discipline_id, grades in disciplines.items():
                 discipline = self.__srv_discipline.search_discipline(discipline_id)
                 grade_values = [grade.get_grade() for grade in grades]
                 print(f"  {discipline.get_name()}: {', '.join(map(str, grade_values))}")
+        
 
     def run(self):
 
@@ -147,6 +153,9 @@ class Interface():
                 ID = int(input("Enter ID for student: "))
                 student = self.__srv_students.search_student(ID)
                 print(f"Student details: {student}")
+
+            if options[0] == "random":
+                self.random_stude()
 
             #    DISCIPLINE
 
@@ -219,5 +228,32 @@ class Interface():
 
             if options[0] == "print" and options[1] == "grades":
                 self.ui_print_all_grades()
+
+            if options[0] == "delete" and options[1] == "grade":
+                ID_student = int(input("Enter ID for student: "))
+                ID_discipline = int(input("Enter ID for discipline: "))
+                Grade = int(input("Enter grade: "))
+                self.__srv_grade.delete_gradesrv(ID_student, ID_discipline,Grade)
+
+            if options[0] == "statistics":
+                Statistics()
+
+            if options[0] == "sort" and options[1] == "grades" :
+                id_discipline = int(input("Enter ID for discipline: "))
+                sorted_list = self.__srv_grade.get_sorted_students_with_grades(id_discipline)
+                for student, grades in sorted_list:
+                    grade_values = [grade.get_grade() for grade in grades]
+                    print(f"Student {student.get_name()} has {', '.join(map(str, grade_values))} grades")
+
+            if options[0] == "average" :
+                id_student = int(input("Enter ID for student: "))
+                average = self.__srv_grade.get_average_grade_for_student(id_student)
+                print(f"Average grade for student {id_student} is {average}")
+
+
+            if options[0] == "sort" and options[1] == "average":
+                for student,avg in self.__srv_grade.sort_grades_by_student():
+                    print(f"Student {student.get_name()} has average grade {avg}")
+
 
 
