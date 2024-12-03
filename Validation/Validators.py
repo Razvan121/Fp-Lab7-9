@@ -1,3 +1,5 @@
+from Exceptions.Exceptions import ValidatorException
+
 
 class Validator:
 
@@ -11,7 +13,7 @@ class Validator:
             error.append("Student name cannot be empty")
 
         if len(error):
-            raise ValueError(error)
+            raise ValidatorException(error)
 
 
     def validate_discipline(self, disciplines):
@@ -27,7 +29,7 @@ class Validator:
 
 
         if len(error):
-            raise ValueError(error)
+            raise ValidatorException(error)
 
 
 

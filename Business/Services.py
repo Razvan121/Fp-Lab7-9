@@ -26,7 +26,10 @@ class ServiceStudents:
         :param id_student: Identifier for the student to be deleted
         :return: The student object that was successfully deleted
         """
-        self.__repo_student.delete_student(id_student)
+        try:
+            self.__repo_student.delete_student(id_student)
+        except RepoException as ex:
+            raise SerivceException("Repo Exception", ex)
 
     def modify_student(self, id_student, name):
         """

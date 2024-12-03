@@ -4,34 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16c364ce-9fb1-4277-9253-cf20557fbda2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Project_Lab7-9.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Business/Services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Business/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Discipline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Students.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exceptions/Exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exceptions/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Repostory_Discipline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Repostory_Students.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/Console.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/Read.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/Ui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Validation/Validators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Validation/__init__.py" afterDir="false" />
+    <list default="true" id="16c364ce-9fb1-4277-9253-cf20557fbda2" name="Changes" comment="full project">
+      <change afterPath="$PROJECT_DIR$/Domain/GradeDto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/file_repo_discipline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/file_repo_grade.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/file_repo_students.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/disciplines.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/grades.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/students.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/run_tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/test_disciplinerepo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/test_disciplineservice.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/test_entities.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/test_graderepo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/test_gradeservice.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/test_studentrepo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/test_studentservice.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/test_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/ServiceGrade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Business/ServiceGrade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/Services.py" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Grade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Grade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Student.py" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Student.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exceptions/Exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exceptions/Exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Repostory_Grade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repostory_Grade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Repostory_Student.py" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repostory_Student.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Validation/Validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/Validation/Validators.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +49,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Razvan121&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Razvan121/Fp-Lab7-9.git&quot;,
+    &quot;accountId&quot;: &quot;cb5cb308-a9af-43b2-a15a-ed63c6618b3c&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -59,27 +72,165 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Ui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Razvan/PycharmProjects/Project_Lab7-9&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for test_disciplinerepo.TestDisciplineRepo.executor": "Run",
+    "Python tests.Python tests for test_disciplinerepo.TestDisciplineRepo.test_add_discipline.executor": "Run",
+    "Python tests.Python tests for test_disciplinerepo.TestDisciplineRepo.test_get_disciplines.executor": "Run",
+    "Python tests.Python tests for test_disciplinerepo.TestDisciplineRepo.test_modify_discipline_name.executor": "Run",
+    "Python tests.Python tests for test_disciplinerepo.TestDisciplineRepo.test_modify_discipline_teacher.executor": "Run",
+    "Python tests.Python tests for test_disciplinerepo.TestDisciplineRepo.test_remove_discipline.executor": "Run",
+    "Python tests.Python tests for test_disciplinerepo.TestDisciplineRepo.test_search_disciplines.executor": "Run",
+    "Python tests.Python tests for test_disciplineservice.TestDisciplineService.executor": "Run",
+    "Python tests.Python tests for test_disciplineservice.TestDisciplineService.test_add_discipline.executor": "Run",
+    "Python tests.Python tests for test_disciplineservice.TestDisciplineService.test_delete_discipline.executor": "Run",
+    "Python tests.Python tests for test_entities.TestDiscipline.executor": "Run",
+    "Python tests.Python tests for test_entities.TestGrade.executor": "Coverage",
+    "Python tests.Python tests for test_entities.TestStudent.executor": "Run",
+    "Python tests.Python tests for test_graderepo.TestGradeRepo.test_add_grade.executor": "Run",
+    "Python tests.Python tests for test_graderepo.TestGradeRepo.test_delete_grade.executor": "Run",
+    "Python tests.Python tests for test_gradeservice.TestGradeService.executor": "Run",
+    "Python tests.Python tests for test_gradeservice.TestGradeService.test_add_grade.executor": "Run",
+    "Python tests.Python tests for test_gradeservice.TestGradeService.test_average_grade_for_student.executor": "Run",
+    "Python tests.Python tests for test_gradeservice.TestGradeService.test_get_trade.executor": "Run",
+    "Python tests.Python tests for test_gradeservice.TestGradeService.test_grades_under_five.executor": "Run",
+    "Python tests.Python tests for test_gradeservice.TestGradeService.test_sort_grades_by_student.executor": "Run",
+    "Python tests.Python tests for test_gradeservice.TestServiceGrade.executor": "Run",
+    "Python tests.Python tests for test_studentrepo.TestStudentRepo.executor": "Run",
+    "Python tests.Python tests for test_studentrepo.TestStudentRepo.test_add_student.executor": "Run",
+    "Python tests.Python tests for test_studentrepo.TestStudentRepo.test_get_student.executor": "Run",
+    "Python tests.Python tests for test_studentrepo.TestStudentRepo.test_modify_student.executor": "Run",
+    "Python tests.Python tests for test_studentrepo.TestStudentRepo.test_remove_student.executor": "Run",
+    "Python tests.Python tests for test_studentrepo.TestStudentRepo.test_search_student.executor": "Run",
+    "Python tests.Python tests for test_studentservice.TestStudentService.executor": "Run",
+    "Python tests.Python tests for test_studentservice.TestStudentService.test_add_student.executor": "Run",
+    "Python tests.Python tests for test_studentservice.TestStudentService.test_delete_student.executor": "Run",
+    "Python tests.Python tests for test_studentservice.TestStudentService.test_get_students.executor": "Run",
+    "Python tests.Python tests for test_studentservice.TestStudentService.test_modify_student.executor": "Run",
+    "Python tests.Python tests for test_validator.TestDiscipline.test_valid.executor": "Run",
+    "Python tests.Python tests for test_validator.TestStudentValidator.executor": "Run",
+    "Python tests.Python tests in test_disciplineservice.py.executor": "Run",
+    "Python tests.Python tests in test_graderepo.py.executor": "Run",
+    "Python tests.Python tests in test_gradeservice.py.executor": "Run",
+    "Python.Repostory_Grade.executor": "Run",
+    "Python.Ui.executor": "Run",
+    "Python.file_repo_grade.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.tests.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Razvan/Downloads/StudentUiServiceRepository/StudentLayered",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.editor",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Razvan\PycharmProjects\Project_Lab7-9\Main" />
+      <recent name="C:\Users\Razvan\PycharmProjects\Project_Lab7-9\Infrastructure" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Python tests for test_disciplineservice.TestDisciplineService" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Project_Lab7-9" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_disciplineservice.TestDisciplineService&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_graderepo.TestGradeRepo.test_add_grade" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Project_Lab7-9" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_graderepo.TestGradeRepo.test_add_grade&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_graderepo.TestGradeRepo.test_delete_grade" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Project_Lab7-9" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_graderepo.TestGradeRepo.test_delete_grade&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_gradeservice.TestGradeService.test_grades_under_five" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Project_Lab7-9" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_gradeservice.TestGradeService.test_grades_under_five&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_gradeservice.TestGradeService.test_sort_grades_by_student" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Project_Lab7-9" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_gradeservice.TestGradeService.test_sort_grades_by_student&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for test_graderepo.TestGradeRepo.test_delete_grade" />
+        <item itemvalue="Python tests.Python tests for test_graderepo.TestGradeRepo.test_add_grade" />
+        <item itemvalue="Python tests.Python tests for test_disciplineservice.TestDisciplineService" />
+        <item itemvalue="Python tests.Python tests for test_gradeservice.TestGradeService.test_grades_under_five" />
+        <item itemvalue="Python tests.Python tests for test_gradeservice.TestGradeService.test_sort_grades_by_student" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
-        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
+        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
       </set>
     </attachedChunks>
   </component>
@@ -95,15 +246,48 @@
       <workItem from="1731060510067" duration="8969000" />
       <workItem from="1731250272891" duration="1334000" />
       <workItem from="1731357225673" duration="10184000" />
+      <workItem from="1732032979956" duration="20448000" />
+      <workItem from="1732384940844" duration="908000" />
+      <workItem from="1732639782576" duration="8312000" />
+      <workItem from="1732718433794" duration="1564000" />
+      <workItem from="1732746485494" duration="16000" />
+      <workItem from="1732973840351" duration="47408000" />
     </task>
+    <task id="LOCAL-00001" summary="full project">
+      <option name="closed" value="true" />
+      <created>1732294728306</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732294728306</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="full project" />
+    <option name="LAST_COMMIT_MESSAGE" value="full project" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Project_Lab7_9$tests.coverage" NAME="tests Coverage Results" MODIFIED="1731486634588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
-    <SUITE FILE_PATH="coverage/Project_Lab7_9$Ui.coverage" NAME="Ui Coverage Results" MODIFIED="1731486647796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UI" />
-    <SUITE FILE_PATH="coverage/Project_Lab7_9$main.coverage" NAME="main Coverage Results" MODIFIED="1731487141686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main" />
+    <SUITE FILE_PATH="coverage/Project_Lab7_9$file_repo_grade.coverage" NAME="file_repo_grade Coverage Results" MODIFIED="1733134928822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Infrastructure" />
+    <SUITE FILE_PATH="coverage/Project_Lab7_9$tests.coverage" NAME="tests Coverage Results" MODIFIED="1732697943375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
+    <SUITE FILE_PATH="coverage/Project_Lab7_9$.coverage" NAME=" Coverage Results" MODIFIED="1733262916485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
+    <SUITE FILE_PATH="coverage/Project_Lab7_9$Ui.coverage" NAME="Ui Coverage Results" MODIFIED="1733135809434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UI" />
+    <SUITE FILE_PATH="coverage/Project_Lab7_9$Repostory_Grade.coverage" NAME="Repostory_Grade Coverage Results" MODIFIED="1733262778837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Infrastructure" />
+    <SUITE FILE_PATH="coverage/Project_Lab7_9$main.coverage" NAME="main Coverage Results" MODIFIED="1733262963600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main" />
   </component>
 </project>

@@ -69,4 +69,12 @@ class repostory_students:
     def get_all_students(self):
         return self.__lst_students
 
+    def get_len_student(self):
+        """
+        Function that returns the number of all the students in the grades list
+        :return: an integer representing all students
+        """
+
+        return len(self.__lst_students)
+
 

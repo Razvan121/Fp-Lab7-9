@@ -1,7 +1,7 @@
 import math
 
 from Domain.Grade import Grade
-from Infrastructure.Repostory_Student import repostory_students
+
 
 
 
@@ -29,7 +29,7 @@ class ServiceGrade:
 
     def add_gradesrv(self, id_student, id_discipline, value):
         """
-
+        Add a grade in list of grades
         :param id_student: The unique id of the student.
         :param id_discipline: The unique id of the discipline.
         :param value: The grade.
@@ -49,6 +49,13 @@ class ServiceGrade:
 
 
     def delete_gradesrv(self, id_student,id_discipline,grade_value):
+        """
+        Delete a grade from list of grades
+        :param id_student: The unique id of the student.
+        :param id_discipline: The unique id of the discipline.
+        :param grade_value: The grade that would be deleted
+        :return:
+        """
         student = self.__stud_repo.search_student_by_ID(id_student)
         discipline = self.__dis_repo.search_discipline_by_ID(id_discipline)
         grade = Grade(grade_value, student, discipline)
@@ -56,10 +63,20 @@ class ServiceGrade:
 
 
     def get_grades_discipline(self,id_discipline):
+        """
+        Get a list of sorted grades from a given discipline
+        :param id_discipline: The unique id of the discipline.
+        :return: a list of sorted grades
+        """
         result =  self.__grade_repo.get_grades_for_discipline(id_discipline)
         return sorted(result, key=lambda grade: grade.get_grade(), reverse=True)
 
     def get_sorted_students_with_grades(self,id_discipline):
+        """
+        Get a sorted list with all average grades from all discipline
+        :param id_discipline: The unique id of the discipline.
+        :return: a list o sorted grades by student name
+        """
         discipline = self.__dis_repo.search_discipline_by_ID(id_discipline)
         if discipline is None:
             raise ValueError(f"Discipline with ID {id_discipline} not found")
@@ -82,8 +99,9 @@ class ServiceGrade:
 
     def get_average_grade_for_student(self,id_student):
         """
-
+        Get an average grades for every student
         :param id_student: The unique id of the student.
+        :return average_grade: The average grade of the student with 2 decimal
 
         """
 
@@ -112,6 +130,10 @@ class ServiceGrade:
 
 
     def sort_grades_by_student(self):
+        """
+        Get 20% of first students with the highest average grades
+        :return: list of sorted grades by student
+        """
         
         lst_avg_grades = []
         
@@ -127,16 +149,29 @@ class ServiceGrade:
         cutoff = math.ceil(len(lst_avg_grades) * 0.2)
 
         return lst_avg_grades[:cutoff]
-            
-        
-        
-        
 
+    def grades_under_five(self):
+        """
+        Get a list un all students with all average grades under five
+        :return: list of average grades under five
+        """
+        lst_grades_under_five = []
+        students = self.__stud_repo.get_all_students()
+        for student in students:
+            id_student = student.get_id()
+            avg = self.get_average_grade_for_student(id_student)
 
+            if avg <=5 :
+                lst_grades_under_five.append((student,avg))
 
+        return lst_grades_under_five
 
 
     def get_all_gradesrv(self):
+        """
+        Get the list with all grades
+        :return: list of all grades
+        """
 
         return self.__grade_repo.get_all_grades()
 

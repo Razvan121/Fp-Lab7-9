@@ -33,5 +33,14 @@ class Student:
         """
         self.__name = name
 
+
+    @classmethod
+    def from_string(cls, string):
+        string = string.split(",")
+        return cls(int(string[0]), (string[1]))
+
+
+
     def __str__(self):
         return f"ID student: {self.__id_Student} Name: {self.__name}"
+

@@ -28,6 +28,12 @@ class Interface():
             except ValueError as e:
                 print(f"Error: {e}")
 
+    def new_add_student(self):
+        id_student = int(input("Enter ID for student: "))
+        name = input("Enter name for student: ")
+        student = self.__srv_students.addstudent(id_student, name)
+        print(f"Student details: {student}")
+
     def random_stude(self):
         x = int(input("Enter number of entities: "))
         self.__srv_students.student_random(x)
@@ -84,7 +90,6 @@ class Interface():
 
     def ui_print_all_grades(self):
         student_grades = self.__srv_grade.get_all_gradesrv()
-
         # for student, disciplines in student_grades.items():
         #     print(f"Grades for {student.get_name()}:")
         #     for discipline, grades in disciplines.items():
@@ -92,12 +97,15 @@ class Interface():
         #         print(f"  {discipline.get_name()}: {', '.join(map(str, grade_values))}")
 
         for student_id, disciplines in student_grades.items():
-            student = self.__srv_students.search_student(student_id)  
-            print(f"Grades for {student.get_name()}:")
-            for discipline_id, grades in disciplines.items():
-                discipline = self.__srv_discipline.search_discipline(discipline_id)
-                grade_values = [grade.get_grade() for grade in grades]
-                print(f"  {discipline.get_name()}: {', '.join(map(str, grade_values))}")
+            student = self.__srv_students.search_student(student_id)
+            if student is None:
+                print(f"Student {student_id} does not exist")
+            else:
+                print(f"Grades for {student.get_name()}:")
+                for discipline_id, grades in disciplines.items():
+                    discipline = self.__srv_discipline.search_discipline(discipline_id)
+                    grade_values = [grade.get_grade() for grade in grades]
+                    print(f"  {discipline.get_name()}: {', '.join(map(str, grade_values))}")
         
 
     def run(self):
@@ -170,9 +178,8 @@ class Interface():
                 lst_disciplines = self.__srv_discipline.get_all_disciplines()
                 # for dis in lst_disciplines:
                 #     print(dis)
-                for dis_id, dis in lst_disciplines.items():
-                    print(f"ID: {dis_id}, Subject: {dis}")
-
+                for  dis in lst_disciplines:
+                    print(f"Discipline: {dis}")
             if options[0] == "delete" and options[1] == "discipline":
 
                 if len(options) == 2:
@@ -240,7 +247,7 @@ class Interface():
 
             if options[0] == "sort" and options[1] == "grades" :
                 id_discipline = int(input("Enter ID for discipline: "))
-                sorted_list = self.__srv_grade.get_sorted_students_with_grades(id_discipline)
+                sorted_list = self.__srv_grade.get_sorSted_students_with_grades(id_discipline)
                 for student, grades in sorted_list:
                     grade_values = [grade.get_grade() for grade in grades]
                     print(f"Student {student.get_name()} has {', '.join(map(str, grade_values))} grades")
@@ -253,6 +260,10 @@ class Interface():
 
             if options[0] == "sort" and options[1] == "average":
                 for student,avg in self.__srv_grade.sort_grades_by_student():
+                    print(f"Student {student.get_name()} has average grade {avg}")
+
+            if options[0] == "avg" and options[1] == "5":
+                for student,avg in self.__srv_grade.grades_under_five():
                     print(f"Student {student.get_name()} has average grade {avg}")
 
 

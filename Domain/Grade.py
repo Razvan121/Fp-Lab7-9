@@ -56,5 +56,18 @@ class Grade:
         """
         self.__grade = grade
 
+    @classmethod
+    def from_string(cls, string):
+        """
+        Function that returns a string representation of a Grade object.
+        :param string:
+        :return:
+        """
+
+        string = string.split(',')
+        return cls(int(string[0]), int(string[1]), int(string[2]))
+
     def __repr__(self):
-        return f"Grade :{self.__grade})"
+        return f"Grade :{self.__grade}"
+
+

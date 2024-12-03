@@ -1,5 +1,3 @@
-from wsgiref.validate import validator
-
 from Business.ServiceGrade import ServiceGrade
 from Business.Services import ServiceStudents
 from Domain.Discipline import Discipline
@@ -325,6 +323,57 @@ def test_sort_grades_by_student():
     assert len(lst) == 1
     print("Sort grades by student successfully")
 
+
+def test_grades_under_five():
+    student = Student("1", "Ana Maria")
+    repo_stud = repostory_students()
+    repo_stud.add_student(student)
+
+    student1 = Student("2", "Mihai Gabriel")
+    repo_stud.add_student(student1)
+
+    student2 = Student("3", "Ion Gabriel")
+    repo_stud.add_student(student2)
+
+    discipline = Discipline("1", "Fizica", "Lionel Messi")
+    repo_discipline = repostory_discipline()
+    repo_discipline.add_discipline(discipline)
+
+    discipline2 = Discipline("2", "Matematica", "Ion Gabriel")
+    repo_discipline.add_discipline(discipline2)
+
+    grade = Grade(5, student, discipline)
+    repo_grade = repostory_grade()
+    repo_grade.add_grade(grade)
+
+    grade1 = Grade(4, student, discipline2)
+    repo_grade.add_grade(grade1)
+
+    grade2 = Grade(5, student, discipline)
+    repo_grade.add_grade(grade2)
+
+    grade3 = Grade(8, student1, discipline)
+    repo_grade.add_grade(grade3)
+
+    grade4 = Grade(5, student2, discipline)
+    repo_grade.add_grade(grade4)
+
+    grade_srv = ServiceGrade(Validator(), repo_stud, repo_discipline, repo_grade)
+
+    lst = grade_srv.grades_under_five()
+
+    assert lst[0][1] == 4.67
+    assert lst[0][0].get_name() == "Ana Maria"
+    assert lst[1][1] == 5
+    assert lst[1][0].get_name() == "Ion Gabriel"
+    assert len(lst) == 2
+
+    print("Grades under five successfully")
+
+
+
+
+
 def run_all_tests():
     test_Create_Student()
     test_Create_Discipline()
@@ -343,5 +392,6 @@ def run_all_tests():
     test_sort_list()
     test_get_average_grade_for_student()
     test_sort_grades_by_student()
+    test_grades_under_five()
 
 run_all_tests()

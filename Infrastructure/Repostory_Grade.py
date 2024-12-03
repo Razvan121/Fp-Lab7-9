@@ -4,6 +4,7 @@ class repostory_grade():
 
     def add_grade(self, grade):
         """
+        Add a grade in dictionary grade
         :param grade: The grade object
         """
         student_id = grade.get_id_student()
@@ -20,23 +21,14 @@ class repostory_grade():
 
     def delete_grade(self, id_student, id_discipline,grade):
         """
+        delete a grade from dictionary grade
                 :param id_student: ID of the student
                 :param id_discipline: ID of the discipline
                 :param grade: Grade to delete
                 """
-        # try:
-        #     grades = self.__dict_grade[id_student][id_discipline]
-        #     for existing_grade in grades:
-        #         if existing_grade.get_grade() == grade.get_grade():
-        #             grades.remove(existing_grade)
-        #             break
-        #     else:
-        #         raise ValueError("Grade not found")
-        # except KeyError:
-        #     raise ValueError("Student or discipline not found")
-
         try:
             grades = self.__dict_grade[id_student][id_discipline]
+
             grades.remove(grade)  # Remove the grade directly
             # Clean up empty lists or dictionaries
             if not grades:
@@ -45,6 +37,7 @@ class repostory_grade():
                 del self.__dict_grade[id_student]
         except (KeyError, ValueError):
             raise ValueError("Student, discipline, or grade not found")
+
 
 
     def get_all_grades(self):
