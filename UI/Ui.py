@@ -262,7 +262,7 @@ class Interface():
                 for student,avg in self.__srv_grade.sort_grades_by_student():
                     print(f"Student {student.get_name()} has average grade {avg}")
 
-            if options[0] == "avg" and options[1] == "5":
+            if options[0] == "under" and options[1] == "5":
                 for student,avg in self.__srv_grade.grades_under_five():
                     print(f"Student {student.get_name()} has average grade {avg}")
 

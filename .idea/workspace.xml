@@ -5,34 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16c364ce-9fb1-4277-9253-cf20557fbda2" name="Changes" comment="full project">
-      <change afterPath="$PROJECT_DIR$/Domain/GradeDto.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/file_repo_discipline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/file_repo_grade.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/file_repo_students.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/disciplines.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/grades.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/students.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/run_tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/test_disciplinerepo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/test_disciplineservice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/test_entities.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/test_graderepo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/test_gradeservice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/test_studentrepo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/test_studentservice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/test_validator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/ServiceGrade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Business/ServiceGrade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/Services.py" beforeDir="false" afterPath="$PROJECT_DIR$/Business/Services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Grade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Grade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Student.py" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Student.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exceptions/Exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exceptions/Exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Repostory_Grade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repostory_Grade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Repostory_Student.py" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Repostory_Student.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/Ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Ui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Validation/Validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/Validation/Validators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/file_repo_students.py" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/file_repo_students.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/disciplines.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Main/disciplines.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/grades.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Main/grades.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/students.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Main/students.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +96,7 @@
     "Python.tests.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Razvan/Downloads/StudentUiServiceRepository/StudentLayered",
+    "last_opened_file_path": "C:/Users/Razvan/Downloads/Country statistics",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -135,7 +112,7 @@
       <recent name="C:\Users\Razvan\PycharmProjects\Project_Lab7-9\Infrastructure" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Python tests for test_disciplineservice.TestDisciplineService">
     <configuration name="Python tests for test_disciplineservice.TestDisciplineService" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Project_Lab7-9" />
       <option name="ENV_FILES" value="" />
@@ -252,6 +229,7 @@
       <workItem from="1732718433794" duration="1564000" />
       <workItem from="1732746485494" duration="16000" />
       <workItem from="1732973840351" duration="47408000" />
+      <workItem from="1733502983288" duration="15990000" />
     </task>
     <task id="LOCAL-00001" summary="full project">
       <option name="closed" value="true" />

@@ -1,8 +1,8 @@
 import math
 
 from Domain.Grade import Grade
-
-
+from Sorting.BubbleSort import BubbleSort
+from Sorting.ShellSort import shellSort
 
 
 class ServiceGrade:
@@ -69,7 +69,10 @@ class ServiceGrade:
         :return: a list of sorted grades
         """
         result =  self.__grade_repo.get_grades_for_discipline(id_discipline)
-        return sorted(result, key=lambda grade: grade.get_grade(), reverse=True)
+        listCopy = BubbleSort(result,key=lambda grade: grade.get_grade(),reverse=True)
+        # return sorted(result, key=lambda grade: grade.get_grade(), reverse=True)
+        return listCopy
+
 
     def get_sorted_students_with_grades(self,id_discipline):
         """
@@ -82,7 +85,8 @@ class ServiceGrade:
             raise ValueError(f"Discipline with ID {id_discipline} not found")
 
         students = self.__stud_repo.get_all_students()
-        sorted_students = sorted(students, key=lambda student: student.get_name())
+        # sorted_students = sorted(students, key=lambda student: student.get_name())
+        sorted_students = BubbleSort(students,key = lambda student: student.get_name())
 
         sort_grades = []
 
@@ -97,37 +101,70 @@ class ServiceGrade:
 
         return sort_grades
 
-    def get_average_grade_for_student(self,id_student):
-        """
-        Get an average grades for every student
-        :param id_student: The unique id of the student.
-        :return average_grade: The average grade of the student with 2 decimal
+    # def get_average_grade_for_student(self,id_student):
+    #     """
+    #     Get an average grades for every student
+    #     :param id_student: The unique id of the student.
+    #     :return average_grade: The average grade of the student with 2 decimal
+    #
+    #     """
+    #
+    #     student = self.__stud_repo.search_student_by_ID(id_student)
+    #
+    #     if student is None:
+    #         raise ValueError(f"Student with ID {id_student} not found")
+    #
+    #     disciplines = self.__grade_repo.get_all_grades().get(id_student, {})
+    #
+    #     average_grade = 0
+    #     grade_count = 0
+    #
+    #     for discipline in disciplines.values():
+    #         for grade in discipline:
+    #             average_grade += grade.get_grade()
+    #             grade_count +=1
+    #
+    #     if grade_count >0:
+    #         average_grade /= grade_count
+    #     else:
+    #         average_grade = 0
+    #
+    #
+    #     return round(average_grade,2)
 
+    def get_average_grade_for_student(self, id_student):
+        """
+        Get an average grade for a specific student using recursion.
+        :param id_student: The unique ID of the student.
+        :return average_grade: The average grade of the student rounded to 2 decimals.
         """
 
         student = self.__stud_repo.search_student_by_ID(id_student)
-
         if student is None:
             raise ValueError(f"Student with ID {id_student} not found")
 
         disciplines = self.__grade_repo.get_all_grades().get(id_student, {})
 
-        average_grade = 0
+        def recursive_calculate(grades_list, index=0, total_sum=0, count=0):
+            if index == len(grades_list):
+                return total_sum, count
+
+            return recursive_calculate(grades_list, index + 1, total_sum + grades_list[index].get_grade(), count + 1)
+
+
+        total_sum = 0
         grade_count = 0
 
-        for discipline in disciplines.values():
-            for grade in discipline:
-                average_grade += grade.get_grade()
-                grade_count +=1
+        for grades in disciplines.values():
+            partial_sum, partial_count = recursive_calculate(grades)
+            total_sum += partial_sum
+            grade_count += partial_count
 
-        if grade_count >0:
-            average_grade /= grade_count
+
+        if grade_count > 0:
+            return round(total_sum / grade_count, 2)
         else:
-            average_grade = 0
-
-
-        return round(average_grade,2)
-
+            return 0
 
     def sort_grades_by_student(self):
         """
@@ -138,34 +175,64 @@ class ServiceGrade:
         lst_avg_grades = []
         
         students = self.__stud_repo.get_all_students()
+        # Complexitate: O(n), unde n este numărul de studenți din sistem.
         
         for student in students:
             id_student = student.get_id()
             avg = self.get_average_grade_for_student(id_student)
             
             lst_avg_grades.append((student,avg))
+        # Complexitate: O(n * m), unde n este numărul de studenți și m este numărul de discipline.
+        # Dacă numărul de discipline variază, atunci complexitatea este O(n * m).
+        # Dacă este un număr fix de discipline, poate fi considerată O(n).
 
-        lst_avg_grades.sort(key=lambda x: x[1], reverse=True)
+
+
+        BubbleSort(lst_avg_grades,key=lambda x: x[1],reverse=True)
+        # Complexitate: O(n^2), deoarece BubbleSort are o complexitate de O(n^2) în cel mai rău caz.
+
         cutoff = math.ceil(len(lst_avg_grades) * 0.2)
 
         return lst_avg_grades[:cutoff]
+        # Complexitate: O(k), unde k este numărul de studenți care au medii sub top 20%.
 
+    # def grades_under_five(self):
+    #     """
+    #     Get a list un all students with all average grades under five
+    #     :return: list of average grades under five
+    #     """
+    #     lst_grades_under_five = []
+    #     students = self.__stud_repo.get_all_students()
+    #     for student in students:
+    #         id_student = student.get_id()
+    #         avg = self.get_average_grade_for_student(id_student)
+    #
+    #         if avg <=5 :
+    #             lst_grades_under_five.append((student,avg))
+    #
+    #     return lst_grades_under_five
     def grades_under_five(self):
         """
-        Get a list un all students with all average grades under five
+        Get a list of all students with all average grades under five (recursive version).
         :return: list of average grades under five
         """
-        lst_grades_under_five = []
         students = self.__stud_repo.get_all_students()
-        for student in students:
+
+        def recursive_filter(lst_students, index=0, result=[]):
+
+            if index == len(lst_students):
+                return result
+
+            student = lst_students[index]
             id_student = student.get_id()
             avg = self.get_average_grade_for_student(id_student)
 
-            if avg <=5 :
-                lst_grades_under_five.append((student,avg))
+            if avg <= 5:
+                result.append((student, avg))
 
-        return lst_grades_under_five
+            return recursive_filter(lst_students, index + 1, result)
 
+        return recursive_filter(students)
 
     def get_all_gradesrv(self):
         """

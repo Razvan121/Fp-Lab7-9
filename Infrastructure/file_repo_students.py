@@ -18,10 +18,17 @@ class StudentRepoFile:
         students = []
         lines = f.readlines()
 
-        for line in lines:
-            id_student,name = [token.strip() for token in line.split(',')]
+        # for line in lines:
+        #     id_student,name = [token.strip() for token in line.split(',')]
+        #     student = Student(int(id_student),name)
+        #     students.append(student)
+
+        for i in range(0,len(lines),2):
+            id_student = lines[i].strip()
+            name = lines[i+1].strip()
             student = Student(int(id_student),name)
             students.append(student)
+
 
         f.close()
         return students
@@ -29,7 +36,7 @@ class StudentRepoFile:
     def __save_to_file(self,students):
         with open(self.__fileName,'w') as file:
             for student in students:
-                student_string = str(student.get_id()) + ',' + str(student.get_name()) +'\n'
+                student_string = str(student.get_id()) + '\n' + str(student.get_name()) +'\n'
                 file.write(student_string)
 
 
